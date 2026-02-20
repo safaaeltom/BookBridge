@@ -9,8 +9,9 @@ function LandingPage() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Fake login for now
     if (username && password) {
+      setUsername("");
+      setPassword("");
       navigate("/home");
     } else {
       alert("Please enter username and password");
@@ -21,10 +22,15 @@ function LandingPage() {
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-3xl mb-6">Book Bridge Login</h1>
 
-      <form onSubmit={handleLogin} className="flex flex-col gap-4 w-80">
+      <form
+        onSubmit={handleLogin}
+        autoComplete="off"
+        className="flex flex-col gap-4 w-80"
+      >
         <input
           type="text"
           placeholder="Username"
+          autoComplete="off"
           className="border p-2"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -33,6 +39,7 @@ function LandingPage() {
         <input
           type="password"
           placeholder="Password"
+          autoComplete="new-password"
           className="border p-2"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
