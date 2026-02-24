@@ -9,9 +9,9 @@ function CountrySelect({ countries, selectedCountry, setSelectedCountry }) {
           max-w-md
           py-4
           text-center
-          text-white
-            font-semibold
-            rounded-lg
+        text-white
+          font-semibold
+          rounded-lg
           bg-white/2
           backdrop-blur-sm
           border border-white/30
