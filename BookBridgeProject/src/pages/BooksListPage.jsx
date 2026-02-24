@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import BookItem from "../components/BookItem";
 
 function BooksListPage() {
   const [books, setBooks] = useState([]);
@@ -28,19 +29,8 @@ function BooksListPage() {
       ) : (
         <div className="grid grid-cols-3 gap-6">
           {books.map((book) => (
-            <div key={book.id} className="border p-4 rounded shadow">
-              {book.image && (
-                <img
-                  src={book.image}
-                  alt={book.title}
-                  className="h-40 w-full object-cover mb-2 rounded"
-                />
-              )}
-              <h2 className="font-bold text-lg">{book.title}</h2>
-              <p>Category: {book.category}</p>
-              <p>Donor: {book.donor}</p>
-            </div>
-          ))}
+  <BookItem key={book.id} book={book} />
+))}
         </div>
       )}
     </div>

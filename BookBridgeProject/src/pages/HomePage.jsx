@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Header from "../components/Header";
+import CountrySelect from "../components/CountrySelect";
+import ActionButtons from "../components/ActionButtons";
+
 function HomePage() {
   const navigate = useNavigate();
   const [countries, setCountries] = useState([]);
@@ -30,62 +34,23 @@ function HomePage() {
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-6 p-6">
-      <h1 className="text-3xl font-bold">Welcome to BookBridge</h1>
+      <Header />
 
       {loading && <p>Loading countries...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
       {!loading && !error && (
         <>
-          <div>
-            <label className="mr-2 font-medium">Country :</label>
-            <select
-              className="border p-2 rounded"
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-            >
-              <option value=""> Choose Country </option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
-          </div>
+          <CountrySelect
+            countries={countries}
+            selectedCountry={selectedCountry}
+            setSelectedCountry={setSelectedCountry}
+          />
 
-          <div className="flex gap-4">
-            <button
-              className={`bg-green-500 text-white p-2 rounded ${
-                !selectedCountry ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              onClick={() => {
-                if (!selectedCountry) {
-                  alert("Please select a country first");
-                  return;
-                }
-                navigate("/books-list", { state: { country: selectedCountry } });
-              }}
-              disabled={!selectedCountry}
-            >
-              Get Book
-            </button>
-
-            <button
-              className={`bg-blue-500 text-white p-2 rounded ${
-                !selectedCountry ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-              onClick={() => {
-                if (!selectedCountry) {
-                  alert("Please select a country first");
-                  return;
-                }
-                navigate("/give-book", { state: { country: selectedCountry } });
-              }}
-              disabled={!selectedCountry}
-            >
-              Give Book
-            </button>
-          </div>
+          <ActionButtons
+            selectedCountry={selectedCountry}
+            navigate={navigate}
+          />
         </>
       )}
     </div>
