@@ -2,7 +2,7 @@ function Header() {
   return (
     <div className="text-center mb-10 px-4 relative z-10">
       {/* Project Name */}
-      <h1 className="text-6xl md:text-6xl font-extrabold leading-[1.4] cursor-pointer"
+      <h1 className="text-7xl md:text-6xl font-extrabold leading-[1.4] cursor-pointer text-gray-100"
         style={{
           color: "white", // text is white
           textShadow: `

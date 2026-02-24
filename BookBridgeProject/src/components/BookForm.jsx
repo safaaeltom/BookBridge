@@ -4,7 +4,8 @@ function BookForm({ preselectedCountry }) {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
-  const [donor, setDonor] = useState("");
+  const [donorName, setDonorName] = useState("");
+  const [donorEmail, setDonorEmail] = useState("");
   const [country, setCountry] = useState(preselectedCountry || "");
 
   const handleSubmit = (e) => {
@@ -15,7 +16,8 @@ function BookForm({ preselectedCountry }) {
       title,
       image,
       category,
-      donor,
+      donorName,
+      donorEmail,
       country,
     };
 
@@ -31,17 +33,18 @@ function BookForm({ preselectedCountry }) {
     setTitle("");
     setImage("");
     setCategory("");
-    setDonor("");
+    setDonorName("");
+    setDonorEmail("");
     setCountry(preselectedCountry || "");
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-      <input
+      <input 
         type="text"
         placeholder="Book Title"
-        className="border p-2"
+        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
@@ -50,42 +53,55 @@ function BookForm({ preselectedCountry }) {
       <input
         type="text"
         placeholder="Book Image URL"
-        className="border p-2"
+        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
 
+      <input
+        type="text"
+        placeholder="Donor Name"
+        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        value={donorName}
+        onChange={(e) => setDonorName(e.target.value)}
+        required
+      />
+
+      <input
+        type="email"
+        placeholder="Donor Email"
+        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        value={donorEmail}
+        onChange={(e) => setDonorEmail(e.target.value)}
+        required
+      />
+
       <select
-        className="border p-2"
+        className="w-full p-3 border rounded bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         required
       >
         <option value="">Select Category</option>
-        <option>Science</option>
-        <option>Math</option>
-        <option>English</option>
-        <option>History</option>
-        <option>Other</option>
+        <option style={{ color: "black"}}>Science</option>
+        <option style={{ color: "black"}}>Math</option>
+        <option style={{ color: "black"}}>English</option>
+        <option style={{ color: "black"}}>Physics</option>
+        <option style={{ color: "black"}}>Chemistry</option>
+        <option style={{ color: "black"}}>History</option>
+        <option style={{ color: "black"}}>Technology</option>
+        <option style={{ color: "black"}}>Other</option>
       </select>
 
-      <input
-        type="text"
-        placeholder="Donor Name"
-        className="border p-2"
-        value={donor}
-        onChange={(e) => setDonor(e.target.value)}
-        required
-      />
-
-        <div className="border p-2 bg-gray-100">
+      <div className="w-full p-3 rounded bg-white/20 text-white border border-white/50">
         {country || "No country selected"}
         </div>
 
       <button
         type="submit"
-        className="bg-blue-500 text-white p-2 rounded"
+        className="bg-white/30 text-white p-3 rounded hover:bg-white/50 transition"
       >
+      
         Submit
       </button>
 

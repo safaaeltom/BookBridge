@@ -10,7 +10,7 @@ function GiveBookPage() {
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center"
   style={{ backgroundImage: `url(${bgImage})` }}
 >
-  <div className="bg-white bg-opacity-60 p-4 sm:p-6 rounded max-w-md w-full">
+  <div className="bg-white/20 p-5 rounded max-w-md w-full backdrop-blur-md">
     <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-white drop-shadow-lg">
         Donate a Book
       </h1>
