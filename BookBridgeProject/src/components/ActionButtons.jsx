@@ -1,7 +1,6 @@
 function ActionButtons({ selectedCountry, navigate }) {
   const handleGetBook = () => {
     if (!selectedCountry) {
-      alert("Please select a country first");
       return;
     }
     navigate("/books-list", { state: { country: selectedCountry } });
@@ -16,20 +15,41 @@ function ActionButtons({ selectedCountry, navigate }) {
   };
 
   return (
-    <div className="flex gap-4 w-full justify-center mt-2">
+    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-4 px-4">
       <button
-        className={`flex-1 bg-green-500 text-white p-2 rounded ${
-          !selectedCountry ? "opacity-50 cursor-not-allowed" : ""
-        }`}
+        className={`
+          w-full sm:w-48
+          py-4
+          text-white
+          font-semibold
+          rounded-lg
+         bg-white/2
+          backdrop-blur-sm
+          border border-white/30
+          hover:bg-white/20
+          transition duration-300
+          ${!selectedCountry ? "opacity-50 cursor-not-allowed" : ""}
+        `}
         onClick={handleGetBook}
         disabled={!selectedCountry}
       >
         Get Book
       </button>
+
       <button
-        className={`flex-1 bg-blue-500 text-white p-2 rounded ${
-          !selectedCountry ? "opacity-50 cursor-not-allowed" : ""
-        }`}
+       className={`
+          w-full sm:w-48
+          py-4
+          text-white
+          font-semibold
+          rounded-lg
+         bg-white/2
+          backdrop-blur-sm
+          border border-white/30
+          hover:bg-white/20
+          transition duration-300
+          ${!selectedCountry ? "opacity-50 cursor-not-allowed" : ""}
+        `}
         onClick={handleGiveBook}
         disabled={!selectedCountry}
       >

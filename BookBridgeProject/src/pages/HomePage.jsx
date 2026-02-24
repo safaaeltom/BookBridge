@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import bgImage from "../assets/books-bg.jpg";
 import Header from "../components/Header";
 import CountrySelect from "../components/CountrySelect";
 import ActionButtons from "../components/ActionButtons";
@@ -33,7 +34,19 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-6 p-6">
+    <div className="relative flex flex-col items-center justify-center min-h-screen px-4">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+         style={{ backgroundImage: `url(${bgImage})`, filter: "none" }}
+      />
+
+      {/* Remove or reduce overlay */}
+      {/* Optional: Slight dark overlay to make text readable */}
+      <div className="absolute inset-0 bg-black opacity-10"></div>
+
+      {/* Main content on top */}
+      <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-lg text-white">
       <Header />
 
       {loading && <p>Loading countries...</p>}
@@ -53,6 +66,7 @@ function HomePage() {
           />
         </>
       )}
+    </div>
     </div>
   );
 }
