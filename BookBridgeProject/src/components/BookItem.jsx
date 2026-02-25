@@ -17,7 +17,7 @@ function BookItem({ book }) {
       )}
 
       <h2 className="text-lg font-semibold">{book.title}</h2>
-      <p className="text-sm text-gray-600">{book.category}</p>
+      <p className="text-sm text-white">{book.category}</p>
       <p className="text-sm">Country: {book.country}</p>
     </div>
   );

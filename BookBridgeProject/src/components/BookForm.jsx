@@ -4,6 +4,7 @@ function BookForm({ preselectedCountry }) {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
+  const [condition, setCondition] = useState("");
   const [donorName, setDonorName] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
   const [country, setCountry] = useState(preselectedCountry || "");
@@ -16,6 +17,7 @@ function BookForm({ preselectedCountry }) {
       title,
       image,
       category,
+      condition,
       donorName,
       donorEmail,
       country,
@@ -33,6 +35,7 @@ function BookForm({ preselectedCountry }) {
     setTitle("");
     setImage("");
     setCategory("");
+    setCondition("");
     setDonorName("");
     setDonorEmail("");
     setCountry(preselectedCountry || "");
@@ -75,6 +78,18 @@ function BookForm({ preselectedCountry }) {
         onChange={(e) => setDonorEmail(e.target.value)}
         required
       />
+        <select
+        className="w-full p-3 border rounded bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        value={condition}
+        onChange={(e) => setCondition(e.target.value)}
+      >
+        <option value="">Select Condition</option>
+        <option style={{ color: "black"}}>New</option>
+        <option style={{ color: "black"}}>Like New</option>
+        <option style={{ color: "black"}}>Good</option>
+        <option style={{ color: "black"}}>Fair</option>
+        <option style={{ color: "black"}}>Poor</option>
+        </select>
 
       <select
         className="w-full p-3 border rounded bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
