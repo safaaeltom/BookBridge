@@ -43,9 +43,9 @@ function BooksListPage() {
         </div>
       )}
     </div>
-    <button className="mt-7 px-4 py-2 bg-white/20 text-white border-white/50 rounded hover:bg-white/30 transition"
+    <button className="mt-7 px-6 py-7 bg-white/20 text-white font-bold border rounded hover:bg-white/30 transition"
           onClick={() => window.location.href = "/give-book"}>
-          Give book in {selectedCountry || "Selected Country"}
+          GIVE BOOKS IN {selectedCountry || "Selected Country"}
         </button>
     </div>
   );
