@@ -27,7 +27,7 @@ function BooksListPage() {
     }} 
   >
     {/* Content container above the overlay */}
-    <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-6 text-white shadow-2xl hover:bg-white/30 transition">
+    <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-6 text-white shadow-2xl">
     <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
         Available Books in {selectedCountry || "Selected Country"}
       </h1>
@@ -36,14 +36,14 @@ function BooksListPage() {
         <p className="text-white text-center">
           No books available in this country.</p>
       ) : (
-        <div className="grid md:grid-cols-5 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {books.map((book) => (
           <BookItem key={book.id} book={book} />
         ))}
         </div>
       )}
     </div>
-    <button className="mt-7 px-6 py-7 bg-white/20 text-white font-bold border rounded hover:bg-white/30 transition"
+    <button className="mt-7 px-6 py-7 bg-white/20 text-white cursor-pointer font-bold border rounded-lg hover:bg-white/30 transition"
           onClick={() => window.location.href = "/give-book"}>
           GIVE BOOKS IN {selectedCountry || "Selected Country"}
         </button>

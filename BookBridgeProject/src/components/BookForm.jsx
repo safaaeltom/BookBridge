@@ -7,6 +7,7 @@ function BookForm({ preselectedCountry }) {
   const [condition, setCondition] = useState("");
   const [donorName, setDonorName] = useState("");
   const [donorEmail, setDonorEmail] = useState("");
+  const [description, setDescription] = useState("");
   const [country, setCountry] = useState(preselectedCountry || "");
 
   const handleSubmit = (e) => {
@@ -20,14 +21,13 @@ function BookForm({ preselectedCountry }) {
       condition,
       donorName,
       donorEmail,
+      description,
       country,
     };
 
     const existingBooks =
       JSON.parse(localStorage.getItem("books")) || [];
-
     const updatedBooks = [...existingBooks, newBook];
-
     localStorage.setItem("books", JSON.stringify(updatedBooks));
 
     alert("Book submitted successfully!");
@@ -38,16 +38,17 @@ function BookForm({ preselectedCountry }) {
     setCondition("");
     setDonorName("");
     setDonorEmail("");
+    setDescription("");
     setCountry(preselectedCountry || "");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:gap-4 md:gap-5">
 
       <input 
         type="text"
         placeholder="Book Title"
-        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
@@ -56,7 +57,7 @@ function BookForm({ preselectedCountry }) {
       <input
         type="text"
         placeholder="Book Image URL"
-        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
@@ -64,7 +65,7 @@ function BookForm({ preselectedCountry }) {
       <input
         type="text"
         placeholder="Donor Name"
-        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={donorName}
         onChange={(e) => setDonorName(e.target.value)}
         required
@@ -73,14 +74,13 @@ function BookForm({ preselectedCountry }) {
       <input
         type="email"
         placeholder="Donor Email"
-        className="w-full p-3 border rounded bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={donorEmail}
         onChange={(e) => setDonorEmail(e.target.value)}
         required
       />
         <select
-        className="w-full p-3 border rounded bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
-        value={condition}
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         onChange={(e) => setCondition(e.target.value)}
       >
         <option value="">Select Condition</option>
@@ -92,7 +92,7 @@ function BookForm({ preselectedCountry }) {
         </select>
 
       <select
-        className="w-full p-3 border rounded bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         required
@@ -108,13 +108,22 @@ function BookForm({ preselectedCountry }) {
         <option style={{ color: "black"}}>Other</option>
       </select>
 
-      <div className="w-full p-3 rounded bg-white/20 text-white border border-white/50">
-        {country || "No country selected"}
-        </div>
+      <input
+        type="text"
+        value={country}
+        readOnly
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+      />
 
+      <textarea        
+        placeholder="Book Description (optional)"
+        className="w-full p-3 sm:p-4 md:p-5 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg resize-none"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button
         type="submit"
-        className="bg-white/30 text-white p-3 rounded hover:bg-white/50 transition"
+        className="bg-white/30 text-white p-3 sm:p-4 md:p-5 rounded-lg hover:bg-white/50 transition text-sm sm:text-base md:text-lg"
       >
       
         Submit

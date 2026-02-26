@@ -23,24 +23,33 @@ function BookDetailsPage() {
     backgroundImage: `url(${bgImage})`,
   }}
 >
-   <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-8 text-white shadow-2xl max-w-md w-full">
-      <h1 className="text-3xl font-bold mb-6b text-center">
+   <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
+      <div className="flex flex-col md:flex-row gap-8 items-start">
+
+      {/* left side - IMAGE */}
+      <img
+    src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
+    alt={book.title}
+    className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/40"
+  />
+
+
+      {/* right side - DETAILS */}
+      <div className="flex-1 overflow-y-auto max-h-[60vh]">
+      <h1 className="text-3xl font-bold mb-6 text-center md:text-left">
         {book.title}
       </h1>
 
-      {book.image && (
-        <img
-          src={book.image}
-          alt={book.title}
-          className="w-full h-64 object-cover mb-6 rounded-lg border border-white/40"
-        />
-      )}
-
       <p><strong>Category:</strong> {book.category}</p>
       <p><strong>Condition:</strong> {book.condition}</p>
+      <p><strong>Description:</strong> {book.description}</p>
+      <p><strong>Version:</strong> {}</p>
       <p><strong>Donor:</strong> {book.donor}</p>
-      <p><strong>Country:</strong> {book.country}</p>
+      <p><strong>Contact:</strong> {book.donorEmail}</p>
+      
     </div>
+  </div>
+  </div>
   </div>
  );
 }
