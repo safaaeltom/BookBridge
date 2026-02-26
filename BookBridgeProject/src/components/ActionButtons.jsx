@@ -15,13 +15,13 @@ function ActionButtons({ selectedCountry, navigate }) {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-4 px-4">
+    <div className="flex flex-col sm:flex-row gap-10 w-full justify-center mt-4 px-4">
       <button
         className={`
           w-full sm:w-48
-          py-4
+          py-7
           text-white
-          font-semibold
+          font-bold
           rounded-lg
          bg-white/2
           backdrop-blur-sm
@@ -33,15 +33,15 @@ function ActionButtons({ selectedCountry, navigate }) {
         onClick={handleGetBook}
         disabled={!selectedCountry}
       >
-        Get Book
+        GET Book
       </button>
 
       <button
        className={`
           w-full sm:w-48
-          py-4
+          py-7
           text-white
-          font-semibold
+          font-bold
           rounded-lg
          bg-white/2
           backdrop-blur-sm
@@ -53,7 +53,7 @@ function ActionButtons({ selectedCountry, navigate }) {
         onClick={handleGiveBook}
         disabled={!selectedCountry}
       >
-        Give Book
+        GIVE Book
       </button>
     </div>
   );
