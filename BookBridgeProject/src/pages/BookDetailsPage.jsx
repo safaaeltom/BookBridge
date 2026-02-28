@@ -24,7 +24,7 @@ function BookDetailsPage() {
 >
    
    {/* Content Wrapper */}
-  <div className="flex flex-col items-center flex-grow">
+  <div className="flex flex-col items-center flex-1">
    
    {/* Glass card */}
    <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
@@ -46,8 +46,7 @@ function BookDetailsPage() {
       <p><strong>Category:</strong> {book.category}</p>
       <p><strong>Condition:</strong> {book.condition}</p>
       <p><strong>Description:</strong> {book.description}</p>
-      <p><strong>Version:</strong> {book.version}</p>
-      <p><strong>Donor:</strong> {book.donor}</p>
+      <p><strong>Donor:</strong> {book.donorName}</p>
       <p><strong>Contact:</strong> {book.donorEmail}</p>
      </div>
 
