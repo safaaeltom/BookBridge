@@ -13,15 +13,18 @@ Parents can donate or give away used books
 Families in need can find and request free educational materials
 
 This helps:
+
 Reduce waste ♻️
 Support education 📖
 Build a helpful community 🤝
 
 🎯 Target Users
+
 Primary Users: Parents with school-age children (book providers)
 Secondary Users: Families who need free or affordable books
 
 ✨ Features
+
 📥 Add a book (title, author, category, condition, contact info)
 🔍 Browse available books by country (API integration)
 📂 Filter books by category
@@ -29,6 +32,7 @@ Secondary Users: Families who need free or affordable books
 🔄 “Give Books” and “Need Books” flows
 
 🛠 Tech Stack
+
 Frontend: JavaScript, React.js
 Styling: Tailwind CSS
 State Management: React Hooks
@@ -37,11 +41,13 @@ Design: Figma
 🖼 UI/UX Design
 
 The interface is designed to be:
+
 Simple and intuitive
 Accessible for all users
 Focused on quick actions (give or find books)
 
 Future Improvements
+
 - Additional features
 - User authentication
 - Deployment
