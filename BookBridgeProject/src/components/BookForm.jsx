@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function BookForm({ preselectedCountry }) {
   const [title, setTitle] = useState("");
@@ -9,6 +9,10 @@ function BookForm({ preselectedCountry }) {
   const [donorEmail, setDonorEmail] = useState("");
   const [description, setDescription] = useState("");
   const [country, setCountry] = useState(preselectedCountry || "");
+
+  useEffect(() => {
+    setCountry(preselectedCountry || "");
+  }, [preselectedCountry]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

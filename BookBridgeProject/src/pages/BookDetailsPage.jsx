@@ -10,13 +10,13 @@ function BookDetailsPage() {
   useEffect(() => {
     const books = JSON.parse(localStorage.getItem("books")) || [];
     const foundBook = books.find((b) => b.id === Number(id));
+
     setBook(foundBook);
   }, [id]);
 
   if (!book) {
     return <div className="p-6">Book not found.</div>;
   }
-
   return (
   <div 
     className="relative min-h-screen bg-cover bg-center flex flex-col px-4 py-12"
@@ -57,12 +57,16 @@ function BookDetailsPage() {
 
   {/* Button - bottom*/}
   <div className="flex justify-center mt-10">
-            <button
-              className="px-8 py-3 bg-white/20 text-white font-bold border border-white/50 rounded-lg hover:bg-white/30 transition backdrop-blur-md"
-              onClick={() => navigate("/give-book")}
-            >
-              GIVE BOOKS IN {book.country || "Selected Country"}
-            </button>
+     <button
+        className="px-8 py-3 bg-white/20 text-white font-bold border border-white/50 rounded-lg hover:bg-white/30 transition backdrop-blur-md"
+        onClick={() => {
+          navigate("/give-book", {
+           state: { country: book.country }
+       })
+    }}
+  >
+    GIVE BOOKS IN {book.country || "Selected Country"}
+  </button>
       </div>
     </div>
  );

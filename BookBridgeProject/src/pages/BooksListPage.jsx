@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import BookItem from "../components/BookItem";
 import bgImage from "../assets/books-bg.jpg";
 
@@ -8,6 +8,7 @@ const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
 function BooksListPage() {
   const [books, setBooks] = useState([]);
   const location = useLocation(); // get state from navigation
+  const navigate = useNavigate();
   const selectedCountry = location.state?.country || "";
 
   useEffect(() => {
@@ -69,7 +70,11 @@ function BooksListPage() {
         </div>
       <button 
         className="mt-7 px-6 py-7 bg-white/20 text-white cursor-pointer font-bold border rounded-lg hover:bg-white/30 transition"
-        onClick={() => window.location.href = "/give-book"}>
+        onClick={() =>
+          navigate("/give-book", {
+            state: { country: selectedCountry }
+          })
+        }>
         GIVE BOOKS IN {selectedCountry || "Selected Country"}
       </button>
     </div>
