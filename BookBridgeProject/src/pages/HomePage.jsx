@@ -5,6 +5,7 @@ import bgImage from "../assets/books-bg.jpg";
 import Header from "../components/Header";
 import CountrySelect from "../components/CountrySelect";
 import ActionButtons from "../components/ActionButtons";
+import { getAfricanCountries } from "../api/countriesApi";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -13,22 +14,15 @@ function HomePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetch("https://restcountries.com/v3.1/region/africa")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch countries");
-        return res.json();
-      })
-      .then((data) => {
-        const sorted = data
-          .map((c) => c.name.common)
-          .sort((a, b) => a.localeCompare(b));
-        setCountries(sorted);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Fetch error:", err);
-        setError("Failed to fetch countries");
+useEffect(() => {
+  getAfricanCountries()
+    .then((countries) => {
+      setCountries(countries);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("Fetch error:", err);
+      setError("Failed to fetch countries");
         setLoading(false);
       });
   }, []);
@@ -49,7 +43,7 @@ function HomePage() {
       <Header />
 
       {loading && <p className="text-sm sm:text-base md:text-lg">Loading countries...</p>}
-      {error && <p className="text-sm sm:text-base md:text-lgtext-red-500">{error}</p>}
+      {error && <p className="text-sm sm:text-base md:text-lg text-red-500">{error}</p>}
 
       {!loading && !error && (
          <div className="w-full flex flex-col gap-4 sm:gap-6 md:gap-8">
