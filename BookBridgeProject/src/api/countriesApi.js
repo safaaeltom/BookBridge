@@ -2,7 +2,7 @@ const API_KEY = import.meta.env.VITE_COUNTRIES_API_KEY;
 
 export async function getAfricanCountries() {
   const response = await fetch(
-    "https://api.restcountries.com/countries/v5/region/Africa?response_fields=names.common,region",
+    "https://api.restcountries.com/countries/v5/region/Africa?response_fields=names.common,region&limit=100",
     {
       headers: {
         Authorization: `Bearer ${API_KEY}`,
