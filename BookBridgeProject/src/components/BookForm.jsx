@@ -9,6 +9,7 @@ function BookForm({ preselectedCountry }) {
   const [donorEmail, setDonorEmail] = useState("");
   const [description, setDescription] = useState("");
   const [country, setCountry] = useState(preselectedCountry || "");
+  const[message, setMessage] = useState("");  
 
   useEffect(() => {
     setCountry(preselectedCountry || "");
@@ -34,7 +35,7 @@ function BookForm({ preselectedCountry }) {
     const updatedBooks = [...existingBooks, newBook];
     localStorage.setItem("books", JSON.stringify(updatedBooks));
 
-    alert("Book submitted successfully!");
+    setMessage("Book submitted successfully!");
 
     setTitle("");
     setImage("");
@@ -44,6 +45,10 @@ function BookForm({ preselectedCountry }) {
     setDonorEmail("");
     setDescription("");
     setCountry(preselectedCountry || "");
+
+    setTimeout(()=>{
+      setMessage("");
+    }, 3000);
   };
 
   return (
@@ -125,6 +130,12 @@ function BookForm({ preselectedCountry }) {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
+
+      {message && (<p className="text-green-700 text-center font-medium">
+          {message}
+        </p>
+      )}
+
       <button
         type="submit"
         className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
