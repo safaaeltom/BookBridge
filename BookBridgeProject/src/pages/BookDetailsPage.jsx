@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import bgImage from "../assets/books-bg.jpg";
+import Navbar from "../components/shared/Navbar";
 
 function BookDetailsPage() {
   const { id } = useParams();

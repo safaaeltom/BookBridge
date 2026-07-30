@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BookItem from "../components/BookList/BookItem";
 import bgImage from "../assets/books-bg.jpg";
+import Navbar from "../components/shared/Navbar";
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
 
