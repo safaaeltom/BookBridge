@@ -16,19 +16,31 @@ function BookDetailsPage() {
   }, [id]);
 
   if (!book) {
-    return <div className="p-6">Book not found.</div>;
+     return (
+      <div
+        className="min-h-screen bg-cover bg-center flex flex-col"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <Navbar />
+
+        <p className="text-white text-center mt-10 text-xl">
+          Book not found.
+        </p>
+      </div>
+    );
   }
+
   return (
   <div 
-    className="relative min-h-screen bg-cover bg-center flex flex-col px-4 py-12"
+    className="min-h-screen bg-cover bg-center flex flex-col"
     style={{backgroundImage: `url(${bgImage})`}}
 >
-   
+   <Navbar />
    {/* Content Wrapper */}
-  <div className="flex flex-col items-center flex-1">
+    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10">
    
    {/* Glass card */}
-   <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
+    <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
       <div className="flex flex-col md:flex-row gap-8 items-start">
 
       {/* IMAGE */}
@@ -51,26 +63,27 @@ function BookDetailsPage() {
       <p><strong>Contact:</strong> {book.donorEmail}</p>
      </div>
 
-    </div>
+   </div>
   </div>
-
-  </div>
+  </main>
 
   {/* Button - bottom*/}
-  <div className="flex justify-center mt-10">
+  <div className="flex justify-center pb-10 px-4">
      <button
         className="px-8 py-3 bg-white/20 text-white font-bold border border-white/50 rounded-lg hover:bg-white/30 transition backdrop-blur-md"
         onClick={() => {
           navigate("/give-book", {
            state: { country: book.country }
        })
-    }}
+    }
+  }
   >
-    GIVE BOOKS IN {book.country || "Selected Country"}
-  </button>
+       GIVE BOOKS IN {book.country || "Selected Country"}
+       </button>
       </div>
     </div>
  );
 }
+
 
 export default BookDetailsPage;
