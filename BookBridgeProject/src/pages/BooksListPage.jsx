@@ -38,12 +38,16 @@ function BooksListPage() {
 
   return (
     <div
-    className="relative min-h-screen bg-cover bg-center flex flex-col items-center py-12"
+    className="min-h-screen bg-cover bg-center flex flex-col"
     style={{ backgroundImage: `url(${bgImage})`}} 
-  >
+    >
+    <Navbar />
     {/* Content container above the overlay */}
+    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10">
+    <div className="w-full max-w-7xl">
+
     <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-6 text-white shadow-2xl">
-    <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
+     <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
         Available Books in {selectedCountry || "Selected Country"}
       </h1>
 
@@ -69,17 +73,25 @@ function BooksListPage() {
           </div>
          )}
         </div>
+      
+      <div className="flex justify-center mt-7">
       <button 
-        className="mt-7 px-6 py-7 bg-white/20 text-white cursor-pointer font-bold border rounded-lg hover:bg-white/30 transition"
+        className="px-6 py-4 bg-white/20 text-white cursor-pointer font-bold border rounded-lg hover:bg-white/30 transition"
         onClick={() =>
           navigate("/give-book", {
             state: { country: selectedCountry }
           })
-        }>
+        }
+        >
         GIVE BOOKS IN {selectedCountry || "Selected Country"}
       </button>
-    </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
   );
 }
+
 
 export default BooksListPage;
