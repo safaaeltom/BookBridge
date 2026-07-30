@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import bgImage from "../assets/books-bg.jpg";
-import Header from "../components/Header";
-import CountrySelect from "../components/CountrySelect";
-import ActionButtons from "../components/ActionButtons";
+import Header from "../components/Home/Header";
+import CountrySelect from "../components/Home/CountrySelect";
+import ActionButtons from "../components/Home/ActionButtons";
 import { getAfricanCountries } from "../api/countriesApi";
 
 function HomePage() {

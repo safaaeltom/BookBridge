@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import BookItem from "../components/BookItem";
+import BookItem from "../components/BookList/BookItem";
 import bgImage from "../assets/books-bg.jpg";
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};

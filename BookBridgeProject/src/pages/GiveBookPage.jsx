@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import BookForm from "../components/BookForm";
+import BookForm from "../components/GiveBook/BookForm";
 import bgImage from "../assets/books-bg.jpg";
 
 function GiveBookPage() {
