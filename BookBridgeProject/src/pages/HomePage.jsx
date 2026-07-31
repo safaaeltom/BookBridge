@@ -6,13 +6,15 @@ import Header from "../components/Home/Header";
 import CountrySelect from "../components/Home/CountrySelect";
 import ActionButtons from "../components/Home/ActionButtons";
 import { getAfricanCountries } from "../api/countriesApi";
+import { useCountry } from "../Context/CountryContext";
 
 function HomePage() {
   const navigate = useNavigate();
+
   const [countries, setCountries] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const { selectedCountry, setSelectedCountry } = useCountry();
 
 useEffect(() => {
   getAfricanCountries()
