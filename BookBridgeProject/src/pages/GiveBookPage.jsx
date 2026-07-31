@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import BookForm from "../components/GiveBook/BookForm";
 import bgImage from "../assets/books-bg.jpg";
-import Navbar from "../components/shared/Navbar";
+import Navbar from "../components/Shared/Navbar";
 
 function GiveBookPage() {
   const location = useLocation();
