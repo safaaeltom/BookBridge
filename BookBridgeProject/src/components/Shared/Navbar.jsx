@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useCountry } from "../../context/CountryContext";
+import { useCountry } from "../../Context/CountryContext";
 
 function Navbar() {
     const { selectedCountry } = useCountry();
