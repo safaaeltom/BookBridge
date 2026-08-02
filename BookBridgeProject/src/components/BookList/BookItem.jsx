@@ -5,7 +5,7 @@ function BookItem({ book }) {
 
   return (
     <div
-      className="border p-4 sm:p-5 rounded-lg shadow-md cursor-pointer  hover:bg-white/10 transition"
+      className="border border-white/40 p-4 sm:p-5 rounded-lg shadow-md cursor-pointer  hover:bg-white/10 transition"
       onClick={() => navigate(`/books/${book.id}`)}
     >
       {book.image && (

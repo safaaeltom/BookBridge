@@ -40,14 +40,14 @@ function BookDetailsPage() {
     <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10">
    
    {/* Glass card */}
-    <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
+    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
       <div className="flex flex-col md:flex-row gap-8 items-start">
 
       {/* IMAGE */}
       <img
       src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
       alt={book.title}
-      className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/40"
+      className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/30"
   />
   
       {/* DETAILS */}

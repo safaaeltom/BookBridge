@@ -16,7 +16,7 @@ function GiveBookPage() {
   <Navbar/>
   
   <div className="flex-1 flex items-start justify-center px-4 pt-25 pb-10">
-  <div className="bg-white/20 p-4 sm:p-6 md:p-8 rounded-xl max-w-md w-full backdrop-blur-md shadow-lg">
+  <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 max-w-md w-full shadow-2xl">
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center text-white drop-shadow-lg">
           Donate a Book
       </h1>

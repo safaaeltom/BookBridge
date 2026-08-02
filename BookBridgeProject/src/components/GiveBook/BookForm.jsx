@@ -57,7 +57,7 @@ function BookForm({ preselectedCountry }) {
       <input 
         type="text"
         placeholder="Book Title"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
@@ -66,7 +66,7 @@ function BookForm({ preselectedCountry }) {
       <input
         type="text"
         placeholder="Book Image URL"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={image}
         onChange={(e) => setImage(e.target.value)}
       />
@@ -74,7 +74,7 @@ function BookForm({ preselectedCountry }) {
       <input
         type="text"
         placeholder="Donor Name"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={donorName}
         onChange={(e) => setDonorName(e.target.value)}
         required
@@ -83,13 +83,13 @@ function BookForm({ preselectedCountry }) {
       <input
         type="email"
         placeholder="Donor Email"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={donorEmail}
         onChange={(e) => setDonorEmail(e.target.value)}
         required
       />
         <select
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         onChange={(e) => setCondition(e.target.value)}
       >
         <option value="">Select Condition</option>
@@ -101,7 +101,7 @@ function BookForm({ preselectedCountry }) {
         </select>
 
       <select
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         required
@@ -121,12 +121,12 @@ function BookForm({ preselectedCountry }) {
         type="text"
         value={country}
         readOnly
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
       />
 
       <textarea        
         placeholder="Book Description (optional)"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg resize-none"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg resize-none"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
@@ -138,7 +138,7 @@ function BookForm({ preselectedCountry }) {
 
       <button
         type="submit"
-        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/50 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
+        className="w-full p-3 sm:p-3 md:p-4 border rounded-lg bg-white/20 text-white placeholder-white border-white/30 focus:outline-none focus:ring-2 focus:ring-white text-sm sm:text-base md:text-lg"
       >
         Submit
       </button>
