@@ -5,7 +5,8 @@ import Navbar from "../components/Shared/Navbar";
 
 function GiveBookPage() {
   const location = useLocation();
-  const preselectedCountry = location.state?.country || "";
+  const params = new URLSearchParams(location.search);
+  const preselectedCountry = params.get("country") || "";
 
   return (
   
@@ -14,7 +15,7 @@ function GiveBookPage() {
     >
   <Navbar/>
   
-  <div className="flex-1 flex items-center justify-center px-4">
+  <div className="flex-1 flex items-center justify-center px-4 pt-25">
   <div className="bg-white/20 p-4 sm:p-6 md:p-8 rounded-xl max-w-md w-full backdrop-blur-md shadow-lg">
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center text-white drop-shadow-lg">
           Donate a Book

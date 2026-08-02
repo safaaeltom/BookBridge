@@ -3,7 +3,7 @@ function ActionButtons({ selectedCountry, navigate }) {
     if (!selectedCountry) {
       return;
     }
-    navigate("/books-list", { state: { country: selectedCountry } });
+    navigate(`/books-list?country=${encodeURIComponent(selectedCountry)}`);
   };
 
   const handleGiveBook = () => {
@@ -11,7 +11,7 @@ function ActionButtons({ selectedCountry, navigate }) {
       alert("Please select a country first");
       return;
     }
-    navigate("/give-book", { state: { country: selectedCountry } });
+    navigate(`/give-book?country=${encodeURIComponent(selectedCountry)}`);
   };
 
   return (

@@ -10,7 +10,8 @@ function BooksListPage() {
   const [books, setBooks] = useState([]);
   const location = useLocation(); // get state from navigation
   const navigate = useNavigate();
-  const selectedCountry = location.state?.country || "";
+  const params = new URLSearchParams(location.search);
+  const selectedCountry = params.get("country") || "";
 
   useEffect(() => {
     const storedBooks = JSON.parse(localStorage.getItem("books")) || [];
@@ -43,7 +44,7 @@ function BooksListPage() {
     >
     <Navbar />
     {/* Content container above the overlay */}
-    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10">
+    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10 pt-25">
     <div className="w-full max-w-7xl">
 
     <div className="bg-white/20 backdrop-blur-md border border-white/50 rounded-xl p-6 text-white shadow-2xl">
