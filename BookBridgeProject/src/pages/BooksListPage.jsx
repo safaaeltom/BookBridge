@@ -74,19 +74,6 @@ function BooksListPage() {
           </div>
          )}
         </div>
-      
-      <div className="flex justify-center mt-7">
-      <button 
-        className="px-6 py-4 bg-white/20 text-white cursor-pointer font-bold border rounded-lg hover:bg-white/30 transition"
-        onClick={() =>
-          navigate("/give-book", {
-            state: { country: selectedCountry }
-          })
-        }
-        >
-        GIVE BOOKS IN {selectedCountry || "Selected Country"}
-      </button>
-        </div>
       </div>
 
     </main>

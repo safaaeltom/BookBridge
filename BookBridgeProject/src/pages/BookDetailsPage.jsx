@@ -67,21 +67,7 @@ function BookDetailsPage() {
   </div>
   </main>
 
-  {/* Button - bottom*/}
-  <div className="flex justify-center pb-10 px-4">
-     <button
-        className="px-8 py-3 bg-white/20 text-white font-bold border border-white/50 rounded-lg hover:bg-white/30 transition backdrop-blur-md"
-        onClick={() => {
-          navigate("/give-book", {
-           state: { country: book.country }
-       })
-    }
-  }
-  >
-       GIVE BOOKS IN {book.country || "Selected Country"}
-       </button>
-      </div>
-    </div>
+  </div>
  );
 }
 
