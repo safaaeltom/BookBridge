@@ -10,12 +10,12 @@ function GiveBookPage() {
 
   return (
   
-    <div className="min-h-screen bg-cover bg-center"
+    <div className="min-h-screen bg-cover bg-center bg-fixed flex flex-col"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
   <Navbar/>
   
-  <div className="flex-1 flex items-center justify-center px-4 pt-25">
+  <div className="flex-1 flex items-start justify-center px-4 pt-25 pb-10">
   <div className="bg-white/20 p-4 sm:p-6 md:p-8 rounded-xl max-w-md w-full backdrop-blur-md shadow-lg">
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center text-white drop-shadow-lg">
           Donate a Book
