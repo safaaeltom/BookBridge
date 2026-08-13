@@ -7,6 +7,7 @@ function BookDetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [book, setBook] = useState(null);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
 
   useEffect(() => {
     const books = JSON.parse(localStorage.getItem("books")) || [];
@@ -14,6 +15,17 @@ function BookDetailsPage() {
 
     setBook(foundBook);
   }, [id]);
+
+  function handleDelete() {
+  const storedBooks = JSON.parse(localStorage.getItem("books")) || [];
+  const updatedBooks = storedBooks.filter(
+    (b) => b.id !== book.id
+  );
+
+  localStorage.setItem("books", JSON.stringify(updatedBooks));
+
+  navigate("/books");
+}
 
   if (!book) {
      return (
@@ -37,11 +49,12 @@ function BookDetailsPage() {
 >
    <Navbar />
    {/* Content Wrapper */}
-    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10">
+    <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10 pt-25">
+    <div className="w-full max-w-7xl">
    
    {/* Glass card */}
     <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
-      <div className="flex flex-col md:flex-row gap-8 items-start">
+    <div className="flex flex-col md:flex-row gap-4 items-start">
 
       {/* IMAGE */}
       <img
@@ -61,9 +74,19 @@ function BookDetailsPage() {
       <p><strong>Description:</strong> {book.description}</p>
       <p><strong>Donor:</strong> {book.donorName}</p>
       <p><strong>Contact:</strong> {book.donorEmail}</p>
+
+      {book.userId === currentUser.id && (
+      <button
+        onClick={handleDelete}
+        className="mt-4 px-4 py-2 bg-white/30 text-red-700 font-medium rounded-lg hover:bg-white/50 transition"
+      >
+        Delete
+      </button>
+      )}
      </div>
 
    </div>
+  </div>
   </div>
   </main>
 

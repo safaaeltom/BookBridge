@@ -47,7 +47,7 @@ function BooksListPage() {
     <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10 pt-25">
     <div className="w-full max-w-7xl">
 
-    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-white shadow-2xl">
+    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl">
      <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-10">
         Available Books in {selectedCountry || "Selected Country"}
       </h1>
