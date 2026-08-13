@@ -44,7 +44,7 @@ function BookDetailsPage() {
 
   return (
   <div 
-    className="min-h-screen bg-cover bg-center flex flex-col"
+    className=" min-h-screen bg-cover bg-center"
     style={{backgroundImage: `url(${bgImage})`}}
 >
    <Navbar />
@@ -53,17 +53,10 @@ function BookDetailsPage() {
     <div className="w-full max-w-7xl">
    
    {/* Glass card */}
-    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl max-w-4xl w-full">
-    <div className="flex flex-col md:flex-row gap-4 items-start">
-
-      {/* IMAGE */}
-      <img
-      src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
-      alt={book.title}
-      className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/30"
-  />
+    <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-4 sm:p-6 md:p-8 text-white shadow-2xl">
+    <div className="flex flex-col md:flex-row gap-8">
   
-      {/* DETAILS */}
+      {/* DETAILS - left*/}
       <div className="flex-1 space-y-2 text-sm sm:text-base">
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center md:text-left">
         {book.title}
@@ -84,6 +77,13 @@ function BookDetailsPage() {
       </button>
       )}
      </div>
+
+     {/* IMAGE - right*/}
+      <img
+      src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
+      alt={book.title}
+      className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/30"
+  />
 
    </div>
   </div>
