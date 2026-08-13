@@ -24,7 +24,7 @@ function BookDetailsPage() {
 
   localStorage.setItem("books", JSON.stringify(updatedBooks));
 
-  navigate("/books");
+  navigate("/books-list");
 }
 
   if (!book) {
