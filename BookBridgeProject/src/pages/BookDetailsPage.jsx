@@ -43,10 +43,13 @@ function BookDetailsPage() {
   }
 
   return (
-  <div 
-    className=" min-h-screen bg-cover bg-center"
-    style={{backgroundImage: `url(${bgImage})`}}
->
+  <div className=" min-h-screen relative">
+    
+    {/* Fixed background */}
+    <div
+      className="fixed inset-0 bg-cover bg-center"
+      style={{backgroundImage: `url(${bgImage})`}}
+    />
    <Navbar />
    {/* Content Wrapper */}
     <main className="flex-1 flex justify-center px-4 sm:px-6 lg:px-8 py-10 pt-25">
@@ -80,15 +83,15 @@ function BookDetailsPage() {
 
      {/* IMAGE - right*/}
       <img
-      src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
-      alt={book.title}
-      className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/30"
-  />
+        src={book.image || "https://via.placeholder.com/300x400?text=No+Image"}
+        alt={book.title}
+        className="w-full md:w-72 h-64 md:h-80 object-cover rounded-lg border border-white/30"
+      />
 
-   </div>
+      </div>
+    </div>
   </div>
-  </div>
-  </main>
+   </main>
 
   </div>
  );
